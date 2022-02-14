@@ -13,7 +13,7 @@ public class Plateau {
     public void validateDimensions() throws Exception {
         for (Integer dimension : dimensions) {
             if (dimension < 0) {
-                throw new Exception("Cannot enter negative values");
+                throw new IllegalArgumentException("Cannot enter negative values");
             }
         }
     }

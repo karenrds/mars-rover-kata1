@@ -4,9 +4,9 @@ public class Rover implements IRoverCommands {
     protected String name;
     public int x;
     public int y;
-    public Position position;
+    public String position;
 
-    public Rover(String name, int x, int y, Position position) {
+    public Rover(String name, int x, int y, String position) {
         this.name = name;
         this.x = x;
         this.y = y;
@@ -15,39 +15,39 @@ public class Rover implements IRoverCommands {
 
     @Override
     public void turnLeft() {
-        if (position.equals(Position.North)) {
-            position = Position.West;
-        } else if (position.equals(Position.South)) {
-            position = Position.East;
-        } else if (position.equals(Position.East)) {
-            position = Position.North;
-        } else if (position.equals(Position.West)) {
-            position = Position.South;
+        if (position.equals("N")) {
+            position = "W";
+        } else if (position.equals("S")) {
+            position = "E";
+        } else if (position.equals("E")) {
+            position = "N";
+        } else if (position.equals("W")) {
+            position = "S";
         }
     }
 
     @Override
     public void turnRight() {
-        if (position.equals(Position.North)) {
-            position = Position.East;
-        } else if (position.equals(Position.South)) {
-            position = Position.West;
-        } else if (position.equals(Position.East)) {
-            position = Position.South;
-        } else if (position.equals(Position.West)) {
-            position = Position.North;
+        if (position.equals("N")) {
+            position = "E";
+        } else if (position.equals("S")) {
+            position = "W";
+        } else if (position.equals("E")) {
+            position = "S";
+        } else if (position.equals("W")) {
+            position = "N";
         }
     }
 
     @Override
     public void move() {
-        if (position.equals(Position.North)) {
+        if (position.equals("N")) {
             y++;
-        } else if (position.equals(Position.South)) {
+        } else if (position.equals("S")) {
             y--;
-        } else if (position.equals(Position.East)) {
+        } else if (position.equals("E")) {
             x++;
-        } else if (position.equals(Position.West)) {
+        } else if (position.equals("W")) {
             x--;
         }
     }

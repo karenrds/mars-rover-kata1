@@ -27,17 +27,17 @@ public class MarsRoversController implements IMarsRoversController {
             }
         }
         if (!errorMessage.isEmpty()) {
-            throw new Exception(errorMessage);
+            throw new IllegalArgumentException(errorMessage);
         } else {
-            return rover.x + " " + rover.y + " " + rover.position;
+            return rover.name + ": " + rover.x + " " + rover.y + " " + rover.position;
         }
     }
 
     public boolean validatePosition(Rover rover) {
-        if ((rover.y == this.plateau.dimensions.get(1) && rover.position.equals(Position.North)) ||
-                (rover.y == 0 && rover.position.equals(Position.South)) ||
-                (rover.x == this.plateau.dimensions.get(0) && rover.position.equals(Position.East)) ||
-                (rover.x == 0 && rover.position.equals(Position.West))) {
+        if ((rover.y == this.plateau.dimensions.get(1) && rover.position.equals("N")) ||
+                (rover.y == 0 && rover.position.equals("S")) ||
+                (rover.x == this.plateau.dimensions.get(0) && rover.position.equals("E")) ||
+                (rover.x == 0 && rover.position.equals("W"))) {
             return true;
         }
         return false;
