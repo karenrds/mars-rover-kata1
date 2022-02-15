@@ -15,3 +15,5 @@ First line of input is to set the Plateau Dimensions.
 Then to input sets the Rover1 and Rover2 position represented by x and y coordinates and position
 
 Third line of input will set the direction for the Rover to move represented by a string of letters
+
+and the result will be shown
